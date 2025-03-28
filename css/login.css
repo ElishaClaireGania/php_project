@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f1e8;        
+    font-family: "Libre Baskerville";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-panel {
+    background-color: #7C0A02;
+    color: #f4f1e8;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-panel h2 {
+    font-family: "Engravers MT";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+}
+
+.ellipse {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #D9A760, #781C1C);
+}
+
+.ellipse1 { 
+    width: 150px; 
+    height: 150px; 
+    top: 10px; 
+    right: -50px; 
+}
+
+.ellipse2 { 
+    width: 250px; 
+    height: 250px; 
+    bottom: -100px; 
+    left: -50px; 
+}
+
+.ellipse3 { 
+    width: 100px; 
+    height: 100px; 
+    top: 125px; 
+    left: 50px; 
+}  
+
+.right-panel {
+    background-color: #E1C16E;
+    width: 50%;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-panel p a {
+    text-decoration: none;
+    color: #2e2e2e; 
+    font-size: 1.125rem;
+    font-family: 'Cinzel', serif; 
+    text-transform: uppercase; 
+    font-weight: bold;
+}
+
+.right-panel p a:hover {
+    color: #7C0A02; 
+    
+}
+
+h3 {
+    font-family: "Engravers MT";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #5A3E36;
+}
+
+h4 { 
+    text-align: center;
+    font-size: 1.125rem;
+    font-family: "Libre Baskerville", serif;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.login-btn {
+    width: 169px;
+    height: 64px;
+    padding: 12px;
+    background-color: #7C0A02;
+    color: #f4f1e8;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.login-btn:hover {
+    color: #DAA428;
+}
+

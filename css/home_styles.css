@@ -1,0 +1,563 @@
+/* ================ LOGIN & SIGNUP ================ */
+.btn-auth {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* Shared styles for buttons */
+.btn-auth a {
+    display: inline-block;
+    padding: 10px 16px;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none; 
+    transition: all 0.3s ease;
+}
+
+/* Signup Button */
+.signup {
+    background-color: #DAA428;
+    color: #7C0A02;
+    border: 3px solid transparent;
+}
+
+.signup:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+    border-color: #DAA428;
+}
+
+/* Login Button */
+.login {
+    background-color: transparent;
+    color: #DAA428;
+    border: 3px solid #DAA428;
+}
+
+.login:hover {
+    background-color: #DAA428;
+    color: #7C0A02;
+}
+
+.logout {
+    background-color: transparent;
+    color: #DAA428;
+    border: 3px solid #DAA428;
+
+}
+
+.logout:hover {
+    background-color: #DAA428;
+    color: #7C0A02;
+}
+
+
+/* ================ BODY ================ */
+ /* TEXT STYLING */
+ .hero-title {
+    font-size: 3rem;
+    color: #f4f1e8;
+    font-family: "Engravers MT", serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #f4f1e8;
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
+  }
+
+  /* SEARCH BAR */
+  .search-box {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #f4f1e8;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-box input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: #f4f1e8;
+  }
+
+  .search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+
+/* ================ Genres ================ */
+/* General Section Styling */
+.categories {
+    background-color: rgba(218, 164, 40, 0.2);
+    padding: 60px 10%;
+    text-align: center;
+    
+}
+
+/* Heading Styles */
+.section-heading {
+    font-size: 2rem;
+    font-family: 'Engravers MT', serif;
+    font-style: normal;
+    text-align: center;
+}
+
+.section-subheading {
+    font-size: 1.2rem;
+    font-family: 'Engravers MT', serif;
+    color: #5A3E36;
+    margin-bottom: 40px;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    text-align: center;
+}
+
+.category {
+    background: none;
+    padding: 20px;
+}
+
+.category h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Engravers MT', serif;
+    color: #5A3E36;
+}
+
+.category p {
+    font-size: 1rem;
+    color: #2e2e2e;
+}
+
+
+/* ================ Featured Books ================ */
+/* General Styling */
+.intro {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.library-desc {
+    font-size: 1.2rem;
+    color: #2e2e2e;
+    margin-bottom: 40px;
+}
+
+/* ================= Featured Image ================= */
+/* Background */
+.featured-books {
+    width: 100%;
+    height: 617px;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.featured-books::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/featuredbooks.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px); 
+    z-index: -1; 
+}
+
+/* Carousel Container */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1000px;
+    height: 450px;
+    margin: auto;
+}
+
+/* Track: Ensures proper positioning */
+.carousel-track {
+    display: flex;
+    width: 500%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Book Slide: Keep all slides the same size */
+.book-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left Side - Book Cover */
+.book-image {
+    flex: 0 0 40%;
+    text-align: center;
+}
+
+.book-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: -15px 0px 50px 5px #7C0A02;
+}
+
+/* Right Side - Book Info */
+.book-info {
+    flex: 1;
+    background: #f4f1e8;
+    padding: 30px;
+    border-radius: 10px;
+    margin-left: 0px;
+    text-align: left;
+    max-width: 25%;
+}
+
+.borrow, .buy {
+    background-color: #DAA428;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    color: #7C0A02;
+}
+
+.borrow:hover, .buy:hover {
+    background-color: #7C0A02;
+    color: #E1C16E;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    background: #DAA428;
+    color: #7C0A02;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev { 
+    left: 10px; 
+}
+.next { 
+    right: 10px; 
+}
+
+.prev:hover, .next:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}
+
+
+/* ================ Engage & Connect ================ */
+/* General Styling */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 10%;
+    background-color: #f4f1e8; 
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-block.reverse .text {
+    order: 2;
+}
+
+.info-block.reverse .image {
+    order: 1;
+}
+
+.text {
+    flex: 1;
+    max-width: 50%;
+    order: 1; 
+}
+
+.text h3 {
+    font-size: 1.4rem;
+    font-family: "Engravers MT", serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5A3E36;
+}
+
+.text ol {
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #2e2e2e;
+}
+
+.image {
+    flex: 1;
+    max-width: 45%;
+    order: 2; 
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* ================ Quote ================ */
+/* General Styling */
+.quote{
+    background-color: #7C0A02; 
+    color: #E1C16E;
+    font-family: 'Estonia';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+/* Styling for the quote section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Styling for the blockquote */
+.the-quote {
+    font-size: 3rem;
+    font-style: italic;
+    max-width: 100%;
+    line-height: 1.5;
+    margin-top: 55px;
+}
+
+/* Logo styling */
+.logo-quote {
+    width: 132px;
+    height: 132px;
+    flex-shrink: 0; 
+    margin-top: 50px;
+    border-radius: 132px;
+    border: 5px solid #E1C16E;
+}
+
+
+/* ================ Read More ================ */
+/* General Styling */
+.articles {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Libre Baskerville', serif;
+    padding: 60px 10%;
+}
+
+.articles h2 {
+    font-family: 'Engravers MT', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #7C0A02;
+}
+
+
+.article-info a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #2e2e2e;
+    font-family: 'Engravers MT', serif;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.article-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.article-meta {
+    text-align: right;
+    font-size: 14px;
+}
+
+
+/* ================ Newsletter ================ */
+/* General Styling */
+.newsletter {
+    position: relative; 
+    margin-left: 140px;
+    width: 80%;
+    height: 510px;
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f4f1e8; 
+    overflow: hidden; 
+    margin-bottom: 70px;
+    border-radius: 7px;
+}
+
+/* Background Image Overlay */
+.newsletter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    z-index: -2; 
+}
+
+/* Overlay */
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 180deg at 50% 50%, rgba(124, 10, 2, 0.50) 92.9926586151123deg, rgba(218, 164, 40, 0.50) 296.333692073822deg, rgba(225, 193, 110, 0.50) 332.03123331069946deg);
+    z-index: -1; 
+}
+
+/* Ensure Content is on Top */
+.newsletter h2,
+.newsletter p,
+.newsletter input,
+.newsletter button {
+    position: relative;
+    z-index: 1; 
+}
+
+/* Styling for form elements */
+.newsletter input {
+    padding: 12px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.newsletter button {
+    padding: 12px 20px;
+    background-color: #DAA428; 
+    color: #7C0A02;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+.newsletter button:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}
+
+.newsletter h2 {
+    font-family: 'Engravers MT', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #f4f1e8;
+}
+
+.newsletter p {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    color: #f4f1e8;
+    margin-bottom: 50px;
+}
+

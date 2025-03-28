@@ -1,0 +1,22 @@
+/* =============== Scroll Button =============== */
+/* Scroll Up Button */
+#back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #DAA428;
+    color: #7c0a02;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  #back-to-top:hover {
+    color: #DAA428;
+    background-color: #7c0a02;
+    
+  }
+  

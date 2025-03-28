@@ -1,0 +1,156 @@
+/* General Styling */
+body {
+    font-family: "Libre Baskerville", serif;
+    background-color: #f4f1e8;
+    color: #2e2e2e;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Category Styling */
+.category-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.category-container h3 {
+    font-size: 1.2rem;
+    color: #7C0A02;
+    margin-right: 10px;
+}
+
+.category-container a {
+    background-color: #DAA428;
+    color: #7C0A02e8;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.category-container a:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}
+
+/* Book List Grid */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Book Card */
+.book {
+    background-color: #2e2e2e;
+    color: #E1C16E;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 280px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-size: 1rem;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #f4f1e8;
+    padding: 0;
+}
+
+.book a {
+    color: #E1C16E;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+.book p {
+    margin-top: 0;
+    padding-top: 0;
+    color: #f4f1e8;
+    font-family: "Libre Baskerville", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+
+.book a:hover {
+    color: #7C0A02;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-container button {
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.borrow {
+    background-color: #DAA428;
+    color: #7C0A02;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+.borrow:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}
+
+.buy {
+    background-color: #DAA428;
+    color: #7C0A02;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+.buy:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}

@@ -1,0 +1,238 @@
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 0;
+    background-color: #f5f1e8; 
+    margin: 0;
+}
+
+/* Contact Cards */
+.contact-card {
+    background-color: #7c0a02; 
+    color: #daa428; 
+    text-align: center;
+    padding: 30px;
+    width: 455px;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Titles */
+.contact-card h3 {
+    font-family: 'Engravers MT', serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Text */
+.contact-card p {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    color: #f4f1e8;
+}
+
+/* Phone Number */
+.phone {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+/* Contact Link */
+.contact-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #E1C16E;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+.contact-btn {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    background-color: #DAA428;
+    color: #7c0a02;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+.contact-btn:hover {
+    background-color: #7c0a02;
+    color: #daa428;
+}
+
+
+/* =============== Form =============== */
+/* Contact Section */
+.contact-form1 {
+    position: relative;
+    background: none;
+    padding: 80px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    color: #f4f1e8;
+    width: 90%;
+    max-width: 1050px;
+    height: 800px;
+    font-size: 1.8rem;
+    margin: 70px auto 90px auto;
+    overflow: hidden;
+}
+
+/* Blurred Background */
+.contact-form1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/message_us.jpg') no-repeat center center/cover;
+    background-size: cover;
+    filter: blur(2px); 
+    z-index: -2;
+}
+
+/* Overlay for better contrast */
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(124, 10, 2, 0.50) 25.83%, rgba(218, 164, 40, 0.50) 82.31%, rgba(225, 193, 110, 0.50) 92.23%);
+    z-index: -1;
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form1 h2 {
+    font-family: 'Engravers MT', serif;
+    text-transform: uppercase;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #f4f1e8;
+}
+
+/* Input Fields */
+.form-group input, 
+.form-group textarea {
+    padding: 14px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #f4f1e8;
+    font-size: 1.125rem;
+}
+
+.message {
+    max-width: 600px;
+    width: 100%;
+    height: 100px;
+}
+
+/* Textarea */
+.form-group textarea {
+    height: 180px; 
+    resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    max-width: 100px;
+    width: 100%;
+    background-color: #DAA428;
+    color: #7C0A02;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #7C0A02;
+    color: #DAA428;
+}
+
+
+/* =============== Map =============== */
+/* Contact Section */
+.contact-location {
+    text-align: center;
+    font-family: "Libre Baskerville" serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-location h2 {
+    color: #2e2e2e;
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* Map Container */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #DAA428, #7C0A02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 70px;
+}
+
+/* Iframe Map */
+.map-container iframe {
+    border-radius: 8px;
+    width: 600px;
+    height: 450px;
+}
