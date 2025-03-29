@@ -60,13 +60,126 @@ if (!$result) {
         <h2 class="featured-books">Featured Books</h2>
     </div>
     <div class="book-list">
+        <div class="book">
+            <img src="book_covers/assembly.png" alt="Assembly Language Programming: ARM Cortex-M3" />
+            <h2>Assembly Language Programming: ARM Cortex-M3</h2>
+            <p> by: Vincent Mahout</p>
+            <a href="Book_details.php?book=assembly_language">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/black.png" alt="Black is Beautiful: A Philosophy of Black Aesthetics" />
+            <h2>Black is Beautiful: A Philosophy of Black Aesthetics</h2>
+            <p>by: Paul C. Taylor</p>
+            <a href="Book_details.php?book=black_beauty">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/creative.png" alt="Creative Management of Complex Systems" />
+            <h2>Creative Management of Complex Systems</h2>
+            <p>by: Jean-Alain Héraud, Fiona Kerr, Thierry Burger-Helmchen</p>
+            <a href="Book_details.php?book=creative_management">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/decision.png" alt="Decision Analytics and Optimization in Disease Prevention and
+                Treatment" />
+            <h2>
+                Decision Analytics and Optimization in Disease Prevention and
+                Treatment
+            </h2>
+            <p>by: NAN KONG, PhD</p>
+            <a href="Book_details.php?book=decision_analytics">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/enable.png" alt="Enabling Technologies for High Spectral-Efficiency Coherent Optical
+                Communication Networks" />
+            <h2>
+                Enabling Technologies for High Spectral-Efficiency Coherent Optical
+                Communication Networks
+            </h2>
+            <p>by: Xiang Zhou</p>
+            <a href="Book_details.php?book=enable_tech">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/geo.jpg" alt="Evolution of Geologic Sciences" />
+            <h2>Evolution of Geologic Sciences</h2>
+            <p>by: John P. Rafferty</p>
+            <a href="Book_details.php?book=geo_science">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/knowledge.png" alt="Knowledge in Risk Assessment and Management" />
+            <h2>Knowledge in Risk Assessment and Management</h2>
+            <a href="Book_details.php?book=knowledge_risk">View Book Details</a>
+            <p>by: TERJE AVEN, PhD</p>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/simulation.png" alt="Simulation and Analysis of Mathematical Methods in Real-Time
+                Engineering Applications" />
+            <h2>
+                Simulation and Analysis of Mathematical Methods in Real-Time
+                Engineering Applications
+            </h2>
+            <p>by: T. Ananth Kumar</p>
+            <a href="Book_details.php?book=simulation_analysis">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="book_covers/yeast.png" alt="Yeast: Molecular and Cell Biology" />
+            <h2>Yeast: Molecular and Cell Biology</h2>
+            <p>by: Horst Feldmann</p>
+            <a href="Book_details.php?book=yeast">View Book Details</a>
+            <div class="button-container">
+                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
+                <a href="buy_book.php"><button class="buy">BUY</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-list">
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <div class="book">
                 <img src="<?= !empty($row['ImageURL']) ? 'book_covers/' . $row['ImageURL'] : 'images/default-book.jpg' ?>"
                     alt="<?= htmlspecialchars($row['Title']); ?>">
                 <h2><?= htmlspecialchars($row['Title']); ?></h3>
                     <p>by: <?= htmlspecialchars($row['Author']); ?></p>
-                    <a href="Book_details.php?book_id=<?= $row['Book_ID']; ?>" target="_blank">View Book Details</a>
+                    <a href="Book_details.php?book_id=<?= $row['Book_ID']; ?>">View Book Details</a>
                     <p>Available: <?= (int)$row['Quantity']; ?></p>
                     <div class="button-container">
                         <?php if ((int)$row['Quantity'] > 0) { ?>
@@ -83,119 +196,6 @@ if (!$result) {
                     </div>
             </div>
         <?php } ?>
-    </div>
-
-    <div class="book-list">
-        <div class="book">
-            <img src="book_covers/assembly.png" alt="Assembly Language Programming: ARM Cortex-M3" />
-            <h2>Assembly Language Programming: ARM Cortex-M3</h2>
-            <p> by: Vincent Mahout</p>
-            <a href="Book_details.php?book=assembly_language" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/black.png" alt="Black is Beautiful: A Philosophy of Black Aesthetics" />
-            <h2>Black is Beautiful: A Philosophy of Black Aesthetics</h2>
-            <p>by: Paul C. Taylor</p>
-            <a href="Book_details.php?book=black_beauty" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/creative.png" alt="Creative Management of Complex Systems" />
-            <h2>Creative Management of Complex Systems</h2>
-            <p>by: Jean-Alain Héraud, Fiona Kerr, Thierry Burger-Helmchen</p>
-            <a href="Book_details.php?book=creative_management" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/decision.png" alt="Decision Analytics and Optimization in Disease Prevention and
-                Treatment" />
-            <h2>
-                Decision Analytics and Optimization in Disease Prevention and
-                Treatment
-            </h2>
-            <p>by: NAN KONG, PhD</p>
-            <a href="Book_details.php?book=decision_analytics" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/enable.png" alt="Enabling Technologies for High Spectral-Efficiency Coherent Optical
-                Communication Networks" />
-            <h2>
-                Enabling Technologies for High Spectral-Efficiency Coherent Optical
-                Communication Networks
-            </h2>
-            <p>by: Xiang Zhou</p>
-            <a href="Book_details.php?book=enable_tech" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/geo.jpg" alt="Evolution of Geologic Sciences" />
-            <h2>Evolution of Geologic Sciences</h2>
-            <p>by: John P. Rafferty</p>
-            <a href="Book_details.php?book=geo_science" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/knowledge.png" alt="Knowledge in Risk Assessment and Management" />
-            <h2>Knowledge in Risk Assessment and Management</h2>
-            <a href="Book_details.php?book=knowledge_risk" target="_blank">View Book Details</a>
-            <p>by: TERJE AVEN, PhD</p>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/simulation.png" alt="Simulation and Analysis of Mathematical Methods in Real-Time
-                Engineering Applications" />
-            <h2>
-                Simulation and Analysis of Mathematical Methods in Real-Time
-                Engineering Applications
-            </h2>
-            <p>by: T. Ananth Kumar</p>
-            <a href="Book_details.php?book=simulation_analysis" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="book_covers/yeast.png" alt="Yeast: Molecular and Cell Biology" />
-            <h2>Yeast: Molecular and Cell Biology</h2>
-            <p>by: Horst Feldmann</p>
-            <a href="Book_details.php?book=yeast" target="_blank">View Book Details</a>
-            <div class="button-container">
-                <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
-                <a href="buy_book.php"><button class="buy">BUY</button></a>
-            </div>
-        </div>
     </div>
 </body>
 <!-- Scroll to Top Button -->

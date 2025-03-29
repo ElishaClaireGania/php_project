@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$result = mysqli_query($conn, "SELECT * FROM personalrecords WHERE ID = $id");
+$result = mysqli_query($conn, "SELECT * FROM personalrecords WHERE Record_ID = $id");
 $user = mysqli_fetch_assoc($result);
 
 if (!$user) {
@@ -17,7 +17,7 @@ if (!$user) {
     exit();
 }
 
-$query1 = "DELETE FROM personal_records WHERE ID = $id";
+$query1 = "DELETE FROM personal_records WHERE Record_ID = $id";
 if (mysqli_query($conn, $query1)) {
 
     if ($user['Type'] == 'User') {

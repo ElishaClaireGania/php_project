@@ -63,8 +63,10 @@ session_start();
 
   <main>
     <section class="categories">
-      <h2 class="section-heading">THIS IS A HEADING</h2>
-      <p class="section-subheading">THIS IS A BODY TEXT</p>
+      <h2 class="section-heading">A Sanctuary of Stories and Knowledge
+      </h2>
+      <p class="section-subheading">Where Every Page Speaks, and Every Mind Listens.
+        Read, Reflect, and Rise.</p>
 
       <div class="category-grid">
         <div class="category">

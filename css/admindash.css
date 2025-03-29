@@ -1,7 +1,12 @@
 /* General Styles */
 body {
-    font-family: "Cinzel", serif;
-    background-color: #f5f1e8;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    background-color: #f4f1e8;
+    color: #2e2e2e;
     margin: 0;
     padding: 0;
 }
@@ -53,7 +58,7 @@ h2 {
 }
 
 .nav-list li:hover a {
-    color: #f5f1e8;
+    color: #DAA520;
 }
 
 /* Logout Button */
@@ -61,12 +66,15 @@ h2 {
     margin-top: 20px;
 }
 
-.logout a {
-    font-family: 'Libre Baskerville', serif;
+.logout a{
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
     display: inline-block;
     padding: 10px 20px;
     background: #7C0A02;
-    color: white;
+    color: #e1c16e;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;

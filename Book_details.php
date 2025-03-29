@@ -5,6 +5,7 @@ $book = null;
 $bookId = $_GET['book_id'] ?? $_GET['book'];
 
 if (isset($bookId) && is_numeric($bookId)) {
+
   // Debugging: Check if book_id is received correctly
   error_log("Book ID received: " . $bookId);
 
@@ -47,6 +48,10 @@ if (isset($bookId) && is_numeric($bookId)) {
 
   <div class="book-container">
     <div class="book-info">
+      <!-- Hardcoded book details will be loaded via JavaScript -->
+      <h2 id="book-title"></h2>
+      <p id="book-description"></p>
+
       <?php if ($book) { ?>
         <!-- Database Book Details -->
         <div class="book-info">
@@ -54,12 +59,6 @@ if (isset($bookId) && is_numeric($bookId)) {
           <p id="book-description"><?= htmlspecialchars($book['Description']); ?></p>
         </div>
       <?php } else { ?>
-    </div>
-
-    <!-- Hardcoded book details will be loaded via JavaScript -->
-    <div class="book-info">
-      <h2 id="book-title"></h2>
-      <p id="book-description"></p>
     </div>
   <?php } ?>
   </div>

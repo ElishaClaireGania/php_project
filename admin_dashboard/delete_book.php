@@ -10,6 +10,14 @@ if (!isset($_SESSION['Admin_ID'])) {
 if (isset($_GET['id'])) {
     $book_id = $_GET['id'];
 
+    // First, delete records from purchasedbooks that reference this book
+    $delete_purchased_query = "DELETE FROM purchasedbooks WHERE Book_ID = $book_id";
+    if (!mysqli_query($conn, $delete_purchased_query)) {
+        echo "<script>alert('Error deleting related purchased book records.'); window.location='manage_books.php';</script>";
+        exit();
+    }
+
+    // Now, delete the book from books table
     $delete_query = "DELETE FROM books WHERE Book_ID = $book_id";
 
     if (mysqli_query($conn, $delete_query)) {

@@ -1,10 +1,12 @@
 /* General Styles */
 body {
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    font-weight: 500;
     font-style: normal;
+    line-height: 1.5;
     background-color: #f4f1e8;
+    color: #2e2e2e;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -20,7 +22,7 @@ h2 {
 /* Form Container */
 form {
     max-width: 500px;
-    background: #f4f1e8;
+    background: #e1c16e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -64,12 +66,11 @@ textarea {
 button {
     max-width: 200px;
     width: 100%;
-    background-color: #DAA520 ;
-    color: #7C0A02;
+    background: #7C0A02;
+    color: #DAA520;
     font-size: 18px;
     font-weight: bold;
     padding: 10px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -78,9 +79,11 @@ button {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    border: none;
 }
 
 button:hover {
-    background: #7C0A02;
-    color: #DAA520;
+    background-color: #DAA520;
+    color: #7C0A02;
+    border: 3px solid #7C0A02;
 }

@@ -76,7 +76,6 @@ console.log("Book ID from URL:", bookId);
 // Select DOM elements
 const bookTitle = document.getElementById("book-title");
 const bookDescription = document.getElementById("book-description");
-const bookContainer = document.querySelector(".book-container");
 
 // Ensure database book details aren't overwritten
 if (!bookTitle.textContent.trim() && bookId && books[bookId]) {
@@ -84,15 +83,6 @@ if (!bookTitle.textContent.trim() && bookId && books[bookId]) {
 
     bookTitle.textContent = book.title;
     bookDescription.textContent = book.description;
-
-    // Add an image element dynamically
-    const bookImage = document.createElement("img");
-    bookImage.src = book.image;
-    bookImage.alt = "Book Image";
-    bookImage.classList.add("book-image");
-
-    // Insert image at the beginning of book-container
-    bookContainer.insertBefore(bookImage, bookContainer.firstChild);
 
     console.log("Loaded hardcoded book details!");
 } else {
