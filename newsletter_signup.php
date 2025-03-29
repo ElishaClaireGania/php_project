@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['message'] = "You are already subscribed!";
-        $_SESSION['message_type'] = "You are not yet subscribed";
+        $_SESSION['message_type'] = "warning";
     } else {
         // Insert into database
         $query = "INSERT INTO newsletter_subscribers (name, email) VALUES (?, ?)";

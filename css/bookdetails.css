@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    font-family: "Cinzel", serif;
+    background-color: #f5f1e8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Engravers MT", serif;
+    color: #7C0A02;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Book Container */
+.book-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.book-image {
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Info */
+.book-info {
+    text-align: center; /* Center text */
+    max-width: 600px;
+    margin: 0 auto; /* Center the container itself */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-info h2 {
+    font-family: "Engravers MT", serif;
+    color: #7C0A02;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.book-info p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 90%; /* Keeps text readable */
+}

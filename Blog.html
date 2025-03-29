@@ -1,194 +1,271 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main_styles.css" />
+    <link rel="stylesheet" href="css/blog.css" />
     <title>Blog</title>
-    <style>
-        /* Fonts & Colors */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
-
-        :root {
-            --engravers-mt: 'Engravers MT', serif;
-            --cinzel: 'Cinzel', serif;
-            --libre-baskerville: 'Libre Baskerville', serif;
-            --deep-crimson: #7C0A02;
-            --dark-charcoal: #2E2E2E;
-            --ivory: #F4F1E8;
-            --soft-gold: #E1C16E;
-            --rich-gold: #DAA428;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--libre-baskerville);
-            background-color: var(--ivory);
-            color: var(--dark-charcoal);
-        }
-
-        header {
-            background-color: var(--deep-crimson);
-            padding: 20px;
-            font-size: 3rem;
-            
-        }
-
-        header h1 {
-            font-family: var(--engravers-mt);
-            color: var(--soft-gold);
-            font-size: 2.5rem;
-        }
-
-        .introduction, .tips, .genres, .research_education, .spotlight_reviews, .new_events {
-            padding: 20px;
-        }
-
-        h2 {
-            font-family: var(--cinzel);
-            color: var(--deep-crimson);
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-family: var(--libre-baskerville);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .card, .genre-card, .spotlight-card, .event-card {
-            background-color: var(--ivory);
-            border: 1px solid var(--deep-crimson);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        a.explore-btn {
-            background-color: var(--rich-gold);
-            color: var(--deep-crimson);
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .event-card a.explore-btn {
-            position: relative;
-            margin-top: 10px;
-        }
-
-        
-    </style>
-</head>
-<body>
-<header>
-    <h1></h1>
-</header>
-<section class="introduction">
-    <p>Welcome to our Library Blog, your go-to space for book reviews, reading tips, literary discussions, and educational resources. Whether you're a casual reader, an academic researcher, or a lifelong learner, our blog provides valuable insights to enhance your reading and learning experience. Stay updated with the latest literary trends, research methodologies, and library-related topics.</p>
-</section>
-<section class="tips">
-    <h2>Reading Tips & Guides</h2>
-    <p>Enhance your reading experience with expert tips! Learn how to develop effective reading habits, improve comprehension, and discover strategies for speed reading. We also share book recommendations based on interests, age groups, and learning goals.</p>
-    <section class="grid">
-        <div class="card">
-            <img src="TIP1.jpg" alt=""> 
-            <h3>Tip 1: Set a Reading Goal</h3>
-            <li>
-                <ul>Define how many books or pages you want to read per week or month.</ul>
-                <ul>Choose books based on your interest and learning objectives.</ul>
-                <ul>Use apps like Goodreads to track your progress.</ul>
-            </li>
-        </div>
-        <div class="card">
-            <img src="" alt="">
-            <h3>Tip 2: Improve Comprehension with Active Reading</h3>
-            <li>
-                <ul>Highlight key points or take notes while reading.</ul>
-                <ul>Summarize each chapter in your own words.</ul>
-                <ul>Discuss books with others to deepen understanding.</ul>
-            </li>
-        </div>
-        <div class="card">
-            <img src="" alt="">
-            <h3>Tip 3: Practice Speed Reading Techniques</h3>
-            <li>
-                <ul>Avoid subvocalization (reading aloud in your head).</ul>
-                <ul>Use a pointer or your finger to guide your eyes faster.</ul>
-                <ul>Expand your peripheral vision to read multiple words at once.</ul>
-            </li>
-        </div>
-    </section>
-</section>
-<section class="genres">
-    <h2>Literary Genres</h2>
-    <p>Explore the vast world of literature! From classic fiction to contemporary fantasy, historical novels to science fiction, we delve into different genres, helping you find your next great read. Understand the characteristics of each genre and how they shape storytelling.</p>
-    <div class="genres-grid">
-        <div class="genre-card"><h3>Fiction</h3>
-            <p>Stories that transport you to different worlds, full of imagination and creativity.</p></div>
-        <div class="genre-card"><h3>Fantasy</h3>
-            <p>Magic, mythical creatures, and epic adventures await in this genre.</p></div>
-        <div class="genre-card"><h3>Mystery & Thriller</h3>
-            <p>Unravel thrilling mysteries and suspenseful plots.</p></div>
-        <div class="genre-card"><h3>Science Fiction</h3>
-            <p>Futuristic technology, space exploration, and alternate realities.</p></div>
-        <div class="genre-card"><h3>Non-Fiction</h3>
-            <p>Learn from real-life stories, history, and expert insights.</p></div>
-        <div class="genre-card"><h3>Poetry</h3>
-            <p>Beautiful verses that touch the heart and soul.</p>
-        </section>
-
-        <section class="research_education">
-           <h2>Research and Education</h2>
-           <p>Get guidance on academic research, citation styles, and credible sources. Learn how to utilize digital libraries, access scholarly articles, and develop effective study habits. This section is perfect for students, educators, and researchers looking for reliable information.</p>
-           <a href="#" class="explore-btn">Explore!</a>
-       </section>
-       
-        <section class="spotlight_reviews">
-           <h2>Author Spotlights & Reviews</h2>
-           <p>Discover the minds behind your favorite books! We feature in-depth author spotlights, interviews, and book reviews that offer critical insights and recommendations. Whether you're looking for a new release or a timeless classic, this section will guide your reading choices.</p>
-           <div class="spotlight-grid">
-               <div class="spotlight-card">
-                   <img src="" alt="">
-                   <h3>Author of the Month: J.K. Rowling</h3>
-                   <p>Explore the journey of J.K. Rowling, the creator of the Harry Potter series.</p>
-                   
-           <!--CHANGE AUTHOR-->
-               </div>
-       </section>
-       
-        <section class="new_events">
-           <h2>Library News & Events</h2>
-           <p>Stay updated with the latest happenings in our library. From book fairs and reading challenges to workshops and guest lectures, this section keeps you informed about upcoming events and new additions to our collection.</p>
-           <div class="events-grid">
-               <div class="event-card">
-                   <h3>New Arrival: "Fourth Wing"</h3>
-                   <p>Discover the latest fantasy sensation by Rebecca Yarros, now available in our library!</p>
-                   
-               </div>
-       
-               <div class="event-card">
-                   <h3>New Arrival: "Fourth Wing"</h3>
-                   <p>Discover the latest fantasy sensation by Rebecca Yarros, now available in our library!</p>
-                   <a href="#" class="explore-btn">Check It Out</a>
-               </div>
-           </div>
-       </section>
-       
-       </body>
-       </html>
-        </div>
+  </head>
+  <header>
+    <div>
+      <a href="Home.php"
+        ><img class="logo" src="images/logo.png" alt="Biblio-Sage Logo"
+      /></a>
     </div>
-</section>
-</body>
+    <nav>
+      <a class="home" href="Home.php">Home</a>
+      <a class="books" href="BookPage.php">Books</a>
+      <a class="blog" href="Blog.html">Blog</a>
+      <a class="about" href="About.php">About</a>
+      <a class="contact" href="Contact.php">Contact</a>
+    </nav>
+  </header>
+  <body>
+    <div class="hero-container">
+      <img class="hero-image" src="images/bloghero.jpg" alt="About Hero" />
+      <div class="overlay"></div>
+      <h1 class="hero-text">
+        Insights & Stories: Beyond the Pages with Biblio-Sage
+      </h1>
+    </div>
+
+    <section class="introduction">
+      <p>
+        Welcome to our Library Blog, your go-to space for book reviews, reading
+        tips, literary discussions, and educational resources. Whether you're a
+        casual reader, an academic researcher, or a lifelong learner, our blog
+        provides valuable insights to enhance your reading and learning
+        experience. Stay updated with the latest literary trends, research
+        methodologies, and library-related topics.
+      </p>
+    </section>
+
+    <section class="tips">
+      <h2>Reading Tips & Guides</h2>
+      <p>
+        Enhance your reading experience with expert tips! Learn how to develop
+        effective reading habits, improve comprehension, and discover strategies
+        for speed reading. We also share book recommendations based on
+        interests, age groups, and learning goals.
+      </p>
+
+      <section class="grid">
+        <div class="card">
+          <img src="TIP1.jpg" alt="" />
+          <h3>Tip 1: Set a Reading Goal</h3>
+          <ul>
+            <li>
+              Define how many books or pages you want to read per week or month.
+            </li>
+            <li>
+              Choose books based on your interest and learning objectives.
+            </li>
+            <li>Use apps like Goodreads to track your progress.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <img src="" alt="" />
+          <h3>Tip 2: Improve Comprehension with Active Reading</h3>
+          <ul>
+            <li>Highlight key points or take notes while reading.</li>
+            <li>Summarize each chapter in your own words.</li>
+            <li>Discuss books with others to deepen understanding.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <img src="" alt="" />
+          <h3>Tip 3: Practice Speed Reading Techniques</h3>
+          <ul>
+            <li>Avoid subvocalization (reading aloud in your head).</li>
+            <li>Use a pointer or your finger to guide your eyes faster.</li>
+            <li>
+              Expand your peripheral vision to read multiple words at once.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="genres">
+      <h2>Literary Genres</h2>
+      <p>
+        Explore the vast world of literature! From classic fiction to
+        contemporary fantasy, historical novels to science fiction, we delve
+        into different genres, helping you find your next great read. Understand
+        the characteristics of each genre and how they shape storytelling.
+      </p>
+
+      <div class="genres-grid">
+        <div class="genre-card">
+          <h3>Fiction</h3>
+          <p>
+            Stories that transport you to different worlds, full of imagination
+            and creativity.
+          </p>
+        </div>
+        <div class="genre-card">
+          <h3>Fantasy</h3>
+          <p>
+            Magic, mythical creatures, and epic adventures await in this genre.
+          </p>
+        </div>
+        <div class="genre-card">
+          <h3>Mystery & Thriller</h3>
+          <p>Unravel thrilling mysteries and suspenseful plots.</p>
+        </div>
+        <div class="genre-card">
+          <h3>Science Fiction</h3>
+          <p>
+            Futuristic technology, space exploration, and alternate realities.
+          </p>
+        </div>
+        <div class="genre-card">
+          <h3>Non-Fiction</h3>
+          <p>Learn from real-life stories, history, and expert insights.</p>
+        </div>
+        <div class="genre-card">
+          <h3>Poetry</h3>
+          <p>Beautiful verses that touch the heart and soul.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="research_education">
+      <h2>Research and Education</h2>
+      <p>
+        Get guidance on academic research, citation styles, and credible
+        sources. Learn how to utilize digital libraries, access scholarly
+        articles, and develop effective study habits. This section is perfect
+        for students, educators, and researchers looking for reliable
+        information.
+      </p>
+      <a href="#" class="explore-btn">Explore!</a>
+    </section>
+
+    <section class="spotlight_reviews">
+      <h2>Author Spotlights & Reviews</h2>
+      <p>
+        Discover the minds behind your favorite books! We feature in-depth
+        author spotlights, interviews, and book reviews that offer critical
+        insights and recommendations. Whether you're looking for a new release
+        or a timeless classic, this section will guide your reading choices.
+      </p>
+
+      <div class="spotlight-grid">
+        <div class="spotlight-card">
+          <img src="" alt="" />
+          <h3>Author of the Month: J.K. Rowling</h3>
+          <p>
+            Explore the journey of J.K. Rowling, the creator of the Harry Potter
+            series.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="new_events">
+      <h2>Library News & Events</h2>
+      <p>
+        Stay updated with the latest happenings in our library. From book fairs
+        and reading challenges to workshops and guest lectures, this section
+        keeps you informed about upcoming events and new additions to our
+        collection.
+      </p>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <h3>New Arrival: "Fourth Wing"</h3>
+          <p>
+            Discover the latest fantasy sensation by Rebecca Yarros, now
+            available in our library!
+          </p>
+        </div>
+
+        <div class="event-card">
+          <h3>New Arrival: "Fourth Wing"</h3>
+          <p>
+            Discover the latest fantasy sensation by Rebecca Yarros, now
+            available in our library!
+          </p>
+          <a href="#" class="explore-btn">Check It Out</a>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- Scroll to Top Button -->
+  <button id="back-to-top" onclick="scrollToTop()">↑</button>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ABOUT</h3>
+        <ul>
+          <li><a href="#meet-team">Developers</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#vision">Vision</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>POLICY</h3>
+        <ul>
+          <li>
+            <a href="footer/terms_and_conditions.html" target="_blank"
+              >Terms and Conditions</a
+            >
+          </li>
+          <li>
+            <a href="footer/privacy_policy.html" target="_blank"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>BLOG</h3>
+        <ul>
+          <li><a href="#">Reading Tips & Guides</a></li>
+          <li><a href="#">Literary Genres</a></li>
+          <li><a href="#">Research & Education</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>GET HELP</h3>
+        <ul>
+          <li><a href="footer/FAQS.html" target="_blank">FAQs</a></li>
+          <li>
+            <a href="footer/customersupport.html" target="_blank"
+              >Customer Support</a
+            >
+          </li>
+          <li>
+            <a href="footer/borrowbuyguide.html" target="_blank"
+              >Borrow/Buy Guide</a
+            >
+          </li>
+          <li>
+            <a href="footer/payment_pricing.html" target="_blank"
+              >Payment & Pricing</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>FOLLOW US</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="icons/fb.png" /></a>
+          <a href="#" target="_blank"><img src="icons/twitter.png" /></a>
+          <a href="#" target="_blank"><img src="icons/insta.png" /></a>
+          <a href="#" target="_blank"><img src="icons/linkedin.png" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>

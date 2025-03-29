@@ -24,7 +24,6 @@ if (isset($_POST['borrow'])) {
     $return_date = date("Y-m-d", strtotime("+7 days"));
     $status = "Borrowed";
 
-
     if ($book['Quantity'] > 0) {
         $insert_query = "INSERT INTO borrowedbooks (User_ID, Book_ID, BorrowedDate, ReturnDate, Status) 
                          VALUES ('$user_id', '$book_id', '$borrow_date', '$return_date', '$status')";
@@ -119,17 +118,18 @@ if (isset($_POST['borrow'])) {
 
     <div class="container">
         <div class="book-image">
-            <img src="<?php echo $book['ImageURL']; ?>" alt="<?php echo $book['Title']; ?>">
+            <img src="<?= !empty($book['ImageURL']) ? 'book_cover/' . $book['ImageURL'] : 'images/default-book.jpg'; ?>" 
+                 alt="<?= htmlspecialchars($book['Title']); ?>">
         </div>
         <div class="book-details">
-            <h2><?php echo $book['Title']; ?></h2>
-            <h4>by <?php echo $book['Author']; ?></h4>
-            <p>Branch: <?php echo $book['Branch']; ?></p>
-            <p><?php echo $book['Description']; ?></p>
-            <p>Price: ₱<?php echo number_format($book['Price'], 2); ?></p>
+            <h2><?= htmlspecialchars($book['Title']); ?></h2>
+            <h4>by <?= htmlspecialchars($book['Author']); ?></h4>
+            <p>Genre: <?= htmlspecialchars($book['Genre']); ?></p>
+            <p><?= htmlspecialchars($book['Description']); ?></p>
+            <p>Price: ₱<?= number_format($book['Price'], 2); ?></p>
 
             <div class="buttons">
-                <a href="buy_book.php?book_id=<?php echo $book['BookID']; ?>">Buy Book</a>
+                <a href="buy_book.php?book_id=<?= $book['Book_ID']; ?>">Buy Book</a>
                 <form method="POST" style="display:inline;">
                     <button type="submit" name="borrow">Borrow Book</button>
                 </form>
@@ -139,7 +139,7 @@ if (isset($_POST['borrow'])) {
 
     <div class="pdf-viewer">
         <h3>Preview Book</h3>
-        <iframe src="<?php echo $book['PDFURL']; ?>" width="100%" height="500px"></iframe>
+        <iframe src="<?= !empty($book['PDFURL']) ? 'e_book/' . $book['PDFURL'] : ''; ?>" width="100%" height="500px"></iframe>
     </div>
 
 </body>

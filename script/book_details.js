@@ -76,7 +76,7 @@ if (bookId && books[bookId]) {
     const book = books[bookId];
     document.getElementById("book-title").textContent = book.title;
     document.getElementById("book-description").textContent = book.description;
-    document.getElementById("book-image").src = book.image;
+    // document.getElementById("book-image").src = book.image;
     document.getElementById("borrow-link").href = book.borrowLink;
     document.getElementById("buy-link").href = book.buyLink;
 } else {

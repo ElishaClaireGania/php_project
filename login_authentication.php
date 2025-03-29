@@ -14,7 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin = mysqli_fetch_assoc($result);
 
     if ($admin) {
-        if (password_verify($password, $admin['Password'])) {
+        $stored_password = $admin['Password'];
+
+        if (password_verify($password, $stored_password) || $stored_password === md5($password)) {
+            if ($stored_password === md5($password)) {
+                $new_hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                $update_query = "UPDATE admin SET Password = ? WHERE Admin_ID = ?";
+                $update_stmt = mysqli_prepare($conn, $update_query);
+                mysqli_stmt_bind_param($update_stmt, "si", $new_hashed_password, $admin['Admin_ID']);
+                mysqli_stmt_execute($update_stmt);
+                mysqli_stmt_close($update_stmt);
+            }
+
             $_SESSION['Admin_ID'] = $admin['Admin_ID'];
             $_SESSION['Email'] = $admin['Email'];
             $_SESSION['Name'] = $admin['Name'];
@@ -43,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
+
     echo "<script>alert('Wrong email or password!'); window.location='login.php';</script>";
 
     mysqli_stmt_close($stmt);

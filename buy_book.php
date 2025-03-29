@@ -26,7 +26,7 @@ if (isset($_POST['purchase'])) {
     $insert_result = mysqli_query($conn, $insert_query);
 
     if ($insert_result) {
-        echo "<script>alert('Book purchased successfully!'); window.location.href = '{$book['PDFURL']}';</script>";
+        echo "<script>alert('Book purchased successfully!'); window.location.href = 'e_book/{$book['PDFURL']}';</script>";
         exit();
     } else {
         echo "<script>alert('Error processing purchase.');</script>";
@@ -92,14 +92,15 @@ if (isset($_POST['purchase'])) {
 
     <div class="container">
         <div class="book-card">
-            <img src="<?php echo $book['ImageURL']; ?>" alt="<?php echo $book['Title']; ?>">
-            <h3><?php echo $book['Title']; ?></h3>
-            <p>by: <?php echo $book['Author']; ?></p>
+            <img src="<?= !empty($book['ImageURL']) ? 'book_cover/' . $book['ImageURL'] : 'images/default-book.jpg'; ?>" 
+                 alt="<?= htmlspecialchars($book['Title']); ?>">
+            <h3><?= htmlspecialchars($book['Title']); ?></h3>
+            <p>by: <?= htmlspecialchars($book['Author']); ?></p>
         </div>
         <div class="description">
             <h2>Overview:</h2>
-            <p><?php echo $book['Description']; ?></p>
-            <h3>Price: Php <?php echo number_format($book['Price'], 2); ?></h3>
+            <p><?= htmlspecialchars($book['Description']); ?></p>
+            <h3>Price: Php <?= number_format($book['Price'], 2); ?></h3>
             <h3>Payment Methods</h3>
 
             <form method="POST">
@@ -111,7 +112,6 @@ if (isset($_POST['purchase'])) {
 
         </div>
     </div>
-
 </body>
 
 </html>

@@ -1,17 +1,6 @@
 <?php
 session_start();
-
-// Database connection
-$db_connect_path = $_SERVER['DOCUMENT_ROOT'] . "/FinalWebsite/admin_dashboard/db_connect.php";
-if (file_exists($db_connect_path)) {
-    include $db_connect_path;
-} else {
-    die("Database connection file missing!");
-}
-
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+include "admin_dashboard/db_connect.php";
 
 // Fetch books from the database
 $query = "SELECT * FROM books";
@@ -65,21 +54,22 @@ if (!$result) {
         <a href="#">1</a>
         <a href="#">2</a>
     </div>
-    <div class="container">
+    <div class="book-list">
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="book-card">
-                <img src="<?= !empty($row['ImageURL']) ? $row['ImageURL'] : 'images/default-book.jpg' ?>"
+            <div class="book">
+                <img src="<?= !empty($row['ImageURL']) ? 'book_covers/' . $row['ImageURL'] : 'images/default-book.jpg' ?>"
                     alt="<?= htmlspecialchars($row['Title']); ?>">
-                <h3><?= htmlspecialchars($row['Title']); ?></h3>
-                <p>Available: <?= (int)$row['Quantity']; ?></p>
-                <div class="buttons">
-                    <?php if ((int)$row['Quantity'] > 0) { ?>
-                        <a href="borrow_book.php?book_id=<?= $row['Book_ID']; ?>">Borrow</a>
-                    <?php } else { ?>
-                        <button disabled>Out of Stock</button>
-                    <?php } ?>
-                    <a href="buy_book.php?book_id=<?= $row['Book_ID']; ?>">Buy</a>
-                </div>
+                <h2><?= htmlspecialchars($row['Title']); ?></h3>
+                    <p>by: <?= htmlspecialchars($row['Author']); ?></p>
+                    <p>Available: <?= (int)$row['Quantity']; ?></p>
+                    <div class="button-container">
+                        <?php if ((int)$row['Quantity'] > 0) { ?>
+                            <a href="borrow_book.php?book_id=<?= $row['Book_ID']; ?>"><button class="borrow">BORROW</button></a>
+                        <?php } else { ?>
+                            <button disabled>Out of Stock</button>
+                        <?php } ?>
+                        <a href="buy_book.php?book_id=<?= $row['Book_ID']; ?>"><button class="buy">BUY</button></a>
+                    </div>
             </div>
         <?php } ?>
     </div>

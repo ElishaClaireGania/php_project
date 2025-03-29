@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <section class="contact-form1">
             <div class="contact-overlay"></div>
             <h2>REACH OUT - WE'D LOVE TO HEAR FROM YOU</h2>
-            <form action="submit_form.php" method="POST" class="contact-form">
+            <form action="Contact.php" method="POST" class="contact-form">
                 <div class="form-group">
                     <input class="for_name" type="text" name="name" placeholder="Enter your Name" required>
                 </div>

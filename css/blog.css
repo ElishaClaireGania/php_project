@@ -1,0 +1,80 @@
+/* Fonts & Colors */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root {
+    --engravers-mt: 'Engravers MT', serif;
+    --cinzel: 'Cinzel', serif;
+    --libre-baskerville: 'Libre Baskerville', serif;
+    --deep-crimson: #7C0A02;
+    --dark-charcoal: #2E2E2E;
+    --ivory: #F4F1E8;
+    --soft-gold: #E1C16E;
+    --rich-gold: #DAA428;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--libre-baskerville);
+    background-color: var(--ivory);
+    color: var(--dark-charcoal);
+}
+
+header {
+    background-color: var(--deep-crimson);
+    padding: 20px;
+    font-size: 3rem;
+    
+}
+
+header h1 {
+    font-family: var(--engravers-mt);
+    color: var(--soft-gold);
+    font-size: 2.5rem;
+}
+
+.introduction, .tips, .genres, .research_education, .spotlight_reviews, .new_events {
+    padding: 20px;
+}
+
+h2 {
+    font-family: var(--cinzel);
+    color: var(--deep-crimson);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: var(--libre-baskerville);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.card, .genre-card, .spotlight-card, .event-card {
+    background-color: var(--ivory);
+    border: 1px solid var(--deep-crimson);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+a.explore-btn {
+    background-color: var(--rich-gold);
+    color: var(--deep-crimson);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.event-card a.explore-btn {
+    position: relative;
+    margin-top: 10px;
+}

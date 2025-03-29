@@ -155,7 +155,7 @@ if (isset($_SESSION['message'])) {
       <div class="team-container">
         <!-- Shane Cordero -->
         <div class="team-member">
-          <img src="path-to-image" alt="Cordero" />
+          <img src="images/Shane.jpg" alt="Cordero" />
           <h3>Cordero, Shane C.</h3>
           <p>
             19 years old, born on July 30, 2005, is an IT student at Holy
@@ -170,7 +170,7 @@ if (isset($_SESSION['message'])) {
 
         <!-- Elisha Gania -->
         <div class="team-member">
-          <img src="path-to-image" alt="Gania" />
+          <img src="images/Claire.jpg" alt="Gania" />
           <h3>Gania, Elisha Claire A.</h3>
           <p>
             19 years old, born on September 19, 2005, she enjoys playing
@@ -185,7 +185,7 @@ if (isset($_SESSION['message'])) {
 
         <!-- Aimee Pangan -->
         <div class="team-member">
-          <img src="path-to-image" alt="Pangan" />
+          <img src="images/Aimee.jpg" alt="Pangan" />
           <h3>Pangan, Aimee Li Marael</h3>
           <p>
             19 years old, born on July 12, 2005, is an IT Web Development
@@ -199,7 +199,7 @@ if (isset($_SESSION['message'])) {
 
         <!-- Kimberly Puno -->
         <div class="team-member">
-          <img src="path-to-image" alt="Puno" />
+          <img src="images/Kim.jpg" alt="Puno" />
           <h3>Puno, Kimberly Clarisse P.</h3>
           <p>
             20 years old, born on November 02, 2004, is a second-year IT
