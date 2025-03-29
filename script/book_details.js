@@ -69,16 +69,32 @@ const books = {
 
 // Get the book ID from URL
 const params = new URLSearchParams(window.location.search);
-const bookId = params.get("book");
+const bookId = params.get("book") || params.get("book_id"); // Support both DB & hardcoded books
 
-// Display book details
-if (bookId && books[bookId]) {
+console.log("Book ID from URL:", bookId);
+
+// Select DOM elements
+const bookTitle = document.getElementById("book-title");
+const bookDescription = document.getElementById("book-description");
+const bookContainer = document.querySelector(".book-container");
+
+// Ensure database book details aren't overwritten
+if (!bookTitle.textContent.trim() && bookId && books[bookId]) {
     const book = books[bookId];
-    document.getElementById("book-title").textContent = book.title;
-    document.getElementById("book-description").textContent = book.description;
-    // document.getElementById("book-image").src = book.image;
-    document.getElementById("borrow-link").href = book.borrowLink;
-    document.getElementById("buy-link").href = book.buyLink;
+
+    bookTitle.textContent = book.title;
+    bookDescription.textContent = book.description;
+
+    // Add an image element dynamically
+    const bookImage = document.createElement("img");
+    bookImage.src = book.image;
+    bookImage.alt = "Book Image";
+    bookImage.classList.add("book-image");
+
+    // Insert image at the beginning of book-container
+    bookContainer.insertBefore(bookImage, bookContainer.firstChild);
+
+    console.log("Loaded hardcoded book details!");
 } else {
-    document.querySelector(".book-container").innerHTML = "<p>Book not found.</p>";
+    console.error("Book not found in database or hardcoded list!");
 }

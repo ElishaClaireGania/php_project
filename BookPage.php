@@ -26,6 +26,7 @@ if (!$result) {
     <link rel="stylesheet" href="css/books_styles.css" />
     <link rel="stylesheet" href="css/scroll.css" />
     <script src="script/functions.js" defer></script>
+    <script src="script/book_details.js" defer></script>
     <title>Books</title>
 </head>
 
@@ -51,8 +52,12 @@ if (!$result) {
 
     <div class="category-container">
         <h3>Category</h3>
-        <a href="#">1</a>
-        <a href="#">2</a>
+        <a href="#">A</a>
+        <a href="#">B</a>
+        <a href="#">C</a>
+    </div>
+    <div>
+        <h2 class="featured-books">Featured Books</h2>
     </div>
     <div class="book-list">
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -61,6 +66,7 @@ if (!$result) {
                     alt="<?= htmlspecialchars($row['Title']); ?>">
                 <h2><?= htmlspecialchars($row['Title']); ?></h3>
                     <p>by: <?= htmlspecialchars($row['Author']); ?></p>
+                    <a href="Book_details.php?book_id=<?= $row['Book_ID']; ?>" target="_blank">View Book Details</a>
                     <p>Available: <?= (int)$row['Quantity']; ?></p>
                     <div class="button-container">
                         <?php if ((int)$row['Quantity'] > 0) { ?>
@@ -68,7 +74,12 @@ if (!$result) {
                         <?php } else { ?>
                             <button disabled>Out of Stock</button>
                         <?php } ?>
-                        <a href="buy_book.php?book_id=<?= $row['Book_ID']; ?>"><button class="buy">BUY</button></a>
+
+                        <?php if ((int)$row['Quantity'] > 0) { ?>
+                            <a href="buy_book.php?book_id=<?= $row['Book_ID']; ?>"><button class="buy">BUY</button></a>
+                        <?php } else { ?>
+                            <button disabled>Out of Stock</button>
+                        <?php } ?>
                     </div>
             </div>
         <?php } ?>
@@ -79,7 +90,7 @@ if (!$result) {
             <img src="book_covers/assembly.png" alt="Assembly Language Programming: ARM Cortex-M3" />
             <h2>Assembly Language Programming: ARM Cortex-M3</h2>
             <p> by: Vincent Mahout</p>
-            <a href="Book_details.html?book=assembly_language">View Book Details</a>
+            <a href="Book_details.php?book=assembly_language" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -90,7 +101,7 @@ if (!$result) {
             <img src="book_covers/black.png" alt="Black is Beautiful: A Philosophy of Black Aesthetics" />
             <h2>Black is Beautiful: A Philosophy of Black Aesthetics</h2>
             <p>by: Paul C. Taylor</p>
-            <a href="Book_details.html?book=black_beauty">View Book Details</a>
+            <a href="Book_details.php?book=black_beauty" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -101,7 +112,7 @@ if (!$result) {
             <img src="book_covers/creative.png" alt="Creative Management of Complex Systems" />
             <h2>Creative Management of Complex Systems</h2>
             <p>by: Jean-Alain Héraud, Fiona Kerr, Thierry Burger-Helmchen</p>
-            <a href="Book_details.html?book=creative_management">View Book Details</a>
+            <a href="Book_details.php?book=creative_management" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -116,7 +127,7 @@ if (!$result) {
                 Treatment
             </h2>
             <p>by: NAN KONG, PhD</p>
-            <a href="Book_details.html?book=decision_analytics">View Book Details</a>
+            <a href="Book_details.php?book=decision_analytics" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -131,7 +142,7 @@ if (!$result) {
                 Communication Networks
             </h2>
             <p>by: Xiang Zhou</p>
-            <a href="Book_details.html?book=enable_tech">View Book Details</a>
+            <a href="Book_details.php?book=enable_tech" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -142,7 +153,7 @@ if (!$result) {
             <img src="book_covers/geo.jpg" alt="Evolution of Geologic Sciences" />
             <h2>Evolution of Geologic Sciences</h2>
             <p>by: John P. Rafferty</p>
-            <a href="Book_details.html?book=geo_science">View Book Details</a>
+            <a href="Book_details.php?book=geo_science" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -152,7 +163,7 @@ if (!$result) {
         <div class="book">
             <img src="book_covers/knowledge.png" alt="Knowledge in Risk Assessment and Management" />
             <h2>Knowledge in Risk Assessment and Management</h2>
-            <a href="Book_details.html?book=knowledge_risk">View Book Details</a>
+            <a href="Book_details.php?book=knowledge_risk" target="_blank">View Book Details</a>
             <p>by: TERJE AVEN, PhD</p>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
@@ -168,7 +179,7 @@ if (!$result) {
                 Engineering Applications
             </h2>
             <p>by: T. Ananth Kumar</p>
-            <a href="Book_details.html?book=simulation_analysis">View Book Details</a>
+            <a href="Book_details.php?book=simulation_analysis" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>
@@ -179,7 +190,7 @@ if (!$result) {
             <img src="book_covers/yeast.png" alt="Yeast: Molecular and Cell Biology" />
             <h2>Yeast: Molecular and Cell Biology</h2>
             <p>by: Horst Feldmann</p>
-            <a href="Book_details.html?book=yeast">View Book Details</a>
+            <a href="Book_details.php?book=yeast" target="_blank">View Book Details</a>
             <div class="button-container">
                 <a href="borrow_book.php"><button class="borrow">BORROW</button></a>
                 <a href="buy_book.php"><button class="buy">BUY</button></a>

@@ -2,34 +2,54 @@
 include "db_connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $author = $_POST['author'];
-    $branch = $_POST['branch'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $description = $_POST['description'];
+    $title = htmlspecialchars($_POST['title']);
+    $author = htmlspecialchars($_POST['author']);
+    $branch = htmlspecialchars($_POST['genre']);
+    $price = floatval($_POST['price']);
+    $quantity = intval($_POST['quantity']);
+    $description = htmlspecialchars($_POST['description']);
 
-    $image_name = $_FILES['book_image']['name'];
-    $image_tmp = $_FILES['book_image']['tmp_name'];
-    $image_path = "../book_covers/" . basename($image_name);
-    move_uploaded_file($image_tmp, $image_path);
+    // File upload validation
+    $allowed_image_types = ['image/jpeg', 'image/png', 'image/gif'];
+    $allowed_pdf_types = ['application/pdf'];
 
-    $pdf_name = $_FILES['book_pdf']['name'];
-    $pdf_tmp = $_FILES['book_pdf']['tmp_name'];
-    $pdf_path = "uploads/" . basename($pdf_name);
-    move_uploaded_file($pdf_tmp, $pdf_path);
+    if (!in_array($_FILES['book_image']['type'], $allowed_image_types)) {
+        die("<script>alert('Invalid image format. Please upload a JPG, PNG, or GIF.'); window.history.back();</script>");
+    }
 
-    // Insert into Database
+    if (!in_array($_FILES['book_pdf']['type'], $allowed_pdf_types)) {
+        die("<script>alert('Invalid file format. Please upload a PDF.'); window.history.back();</script>");
+    }
+
+    // Generate unique file names
+    $image_ext = pathinfo($_FILES['book_image']['name'], PATHINFO_EXTENSION);
+    $pdf_ext = pathinfo($_FILES['book_pdf']['name'], PATHINFO_EXTENSION);
+    $image_name = uniqid("book_", true) . "." . $image_ext;
+    $pdf_name = uniqid("book_", true) . "." . $pdf_ext;
+
+    // Define file paths
+    $image_path = "../book_covers/" . $image_name;
+    $pdf_path = "uploads/" . $pdf_name;
+
+    // Move files
+    move_uploaded_file($_FILES['book_image']['tmp_name'], $image_path);
+    move_uploaded_file($_FILES['book_pdf']['tmp_name'], $pdf_path);
+
+    // Use prepared statement to prevent SQL injection
     $query = "INSERT INTO books (Title, Author, Genre, Price, Quantity, ImageURL, PDFURL, Description) 
-              VALUES ('$title', '$author', '$branch', '$price', '$quantity', '$image_path', '$pdf_path', 'description')";
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-    if (mysqli_query($conn, $query)) {
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "sssddsss", $title, $author, $branch, $price, $quantity, $image_path, $pdf_path, $description);
+
+    if (mysqli_stmt_execute($stmt)) {
         echo "<script>alert('Book added successfully!'); window.location='add_book.php';</script>";
     } else {
         echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,93 +62,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="../css/addbook.css">
     <title>Add Book</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: "Cinzel", serif;
-            background-color: #f5f1e8;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: "Engravers MT", serif;
-            color: #7C0A02;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        /* Form Container */
-        form {
-            max-width: 500px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Input Fields */
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: 'Libre Baskerville', serif;
-        }
-
-        /* File Inputs */
-        input[type="file"] {
-            border: none;
-            background: #f9f9f9;
-            padding: 8px;
-            font-size: 16px;
-        }
-
-        /* Button */
-        button {
-            max-width: 200px;
-            width: 100%;
-            background-color: #DAA520;
-            color: #7C0A02;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-top: 15px;
-            font-family: "Cinzel", serif;
-        }
-
-        button:hover {
-            background: #7C0A02;
-            color: #f5f1e8;
-        }
-    </style>
 </head>
 
 <body>
     <h2>Add a New Book</h2>
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="Book Title" required><br>
-        <input type="text" name="author" placeholder="Author" required><br>
-        <input type="text" name="description" placeholder="Description" required><br>
-        <input type="text" name="branch" placeholder="Branch" required><br>
-        <input type="number" name="price" placeholder="Price" required><br>
-        <input type="number" name="quantity" placeholder="Quantity" required><br>
-        <input type="file" name="book_image" accept="image/*" required><br>
-        <input type="file" name="book_pdf" accept="application/pdf" required><br>
+        <label for="title">Book Title:</label><br>
+        <input type="text" name="title" id="title" required><br>
+
+        <label for="author">Author:</label><br>
+        <input type="text" name="author" id="author" required><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" id="description" rows="5" required></textarea><br>
+
+        <label for="genre">Genre:</label><br>
+        <input type="text" name="genre" id="genre" required><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" name="price" id="price" step="0.01" required><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" name="quantity" id="quantity" required><br>
+
+        <label for="book_image">Book Cover Image:</label><br>
+        <input type="file" name="book_image" id="book_image" accept="image/*" required><br>
+
+        <label for="book_pdf">Book PDF:</label><br>
+        <input type="file" name="book_pdf" id="book_pdf" accept="application/pdf" required><br>
+
         <button type="submit">Add Book</button>
     </form>
+
 </body>
 
 </html>

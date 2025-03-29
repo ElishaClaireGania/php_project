@@ -1,3 +1,4 @@
+// scroll button
 document.addEventListener("DOMContentLoaded", function () {
     const scrollBtn = document.getElementById("back-to-top");
 
@@ -17,4 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth",
         });
     };
+});
+
+
+// search button
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".search-box input");
+    const searchButton = document.querySelector(".search-box button");
+
+    function performSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+            console.log("Searching for:", query);
+            // You can replace the console log with actual search functionality
+        }
+    }
+
+    searchButton.addEventListener("click", performSearch);
+
+    searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            performSearch();
+        }
+    });
 });

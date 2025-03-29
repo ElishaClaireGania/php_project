@@ -50,88 +50,8 @@ if (isset($_POST['update'])) {
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="../css/editbook.css">
     <title>Edit Book</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: "Cinzel", serif;
-            background-color: #f5f1e8;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: "Engravers MT", serif;
-            color: #7C0A02;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        /* Form Container */
-        form {
-            max-width: 500px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Labels */
-        label {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 16px;
-            font-weight: bold;
-            color: #7C0A02;
-            display: block;
-            margin-top: 10px;
-            text-align: left;
-            width: 90%;
-        }
-
-        /* Input Fields */
-        input,
-        textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: 'Libre Baskerville', serif;
-        }
-
-        /* Textarea Styling */
-        textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
-        /* Button */
-        button {
-            max-width: 200px;
-            width: 100%;
-            background-color: #DAA520;
-            color: #7C0A02;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            background: #7C0A02;
-            color: #f5f1e8;
-        }
-    </style>
 </head>
 
 <body>
