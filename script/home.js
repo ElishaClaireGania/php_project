@@ -1,3 +1,4 @@
+// featured books
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".carousel-track");
     const prevButton = document.querySelector(".prev");
@@ -26,5 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateCarousel() {
         track.style.transform = `translateX(-${index * 100}%)`;
+    }
+});
+
+
+// cookie, session, and date & time
+document.addEventListener('DOMContentLoaded', function () {
+    let sessionMessage = document.getElementById('sessionMessage');
+    let dateTimeInfo = document.getElementById('dateTimeInfo');
+
+    // If the session message exists, make it disappear after 3 seconds
+    if (sessionMessage && dateTimeInfo) {
+        setTimeout(() => {
+            sessionMessage.style.display = 'none';  // Hide the user ID message
+            dateTimeInfo.style.display = 'none';   // Hide the date & last visit info
+        }, 3000);  // All info disappears after 3 seconds
     }
 });

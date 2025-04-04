@@ -1,5 +1,39 @@
 <?php
 session_start();
+
+// Cookies & Sessions and Date & Time
+function displayInfo()
+{
+  date_default_timezone_set('Asia/Manila');
+  $currentDateTime = date('F j, Y - g:i A');
+
+  // Session Message (Temporary)
+  if (isset($_SESSION['User_ID'])) {
+    if (!isset($_SESSION['welcome_message'])) {
+      $_SESSION['welcome_message'] = "Welcome back, User ID: " . $_SESSION['User_ID'];
+    }
+
+    // Show session message if it exists
+    if (isset($_SESSION['welcome_message'])) {
+      echo "<div id='sessionMessage' class='info-bar'><p>👤 {$_SESSION['welcome_message']}</p></div>";
+      unset($_SESSION['welcome_message']);
+    }
+
+    // Cookie for last visit
+    $lastVisit = isset($_COOKIE['lastVisit']) ? $_COOKIE['lastVisit'] : "This is your first visit!";
+    setcookie('lastVisit', $currentDateTime, time() + (86400 * 30), "/"); // Cookie expires in 30 days
+
+    echo "<div id='dateTimeInfo' class='info-bar'>
+            <p>📅 Date & Time: $currentDateTime</p>
+            <p>🍪 Last Visit: $lastVisit</p>
+          </div>";
+  } else {
+    // If the user is logged out, delete the 'lastVisit' cookie
+    setcookie('lastVisit', '', time() - 3600, "/"); // Delete the cookie immediately
+  }
+}
+
+displayInfo();
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +52,7 @@ session_start();
   <link rel="stylesheet" href="css/scroll.css" />
   <script src="script/home.js" defer></script>
   <script src="script/functions.js" defer></script>
+  <script src="script/newsletter.js" defer></script>
   <title>Home</title>
 </head>
 
@@ -313,11 +348,24 @@ session_start();
         and insightful articles. Subscribe now to fuel your passion for
         reading!
       </p>
+
       <form action="newsletter_signup.php" method="POST">
         <input type="text" name="name" placeholder="Enter your Name" required />
         <input type="email" name="email" placeholder="Enter your Email" required />
         <button type="submit">Subscribe</button>
       </form>
+      <?php
+      // newsletter
+      if (isset($_SESSION['message'])) {
+        // Assign the ID 'floating-message' to the message box
+        echo "<div id='floating-message' class='message {$_SESSION['message_type']}'>";
+        echo $_SESSION['message'];
+        echo "</div>";
+
+        // Remove message after displaying
+        unset($_SESSION['message']);
+        unset($_SESSION['message_type']);
+      } ?>
     </section>
   </main>
 </body>

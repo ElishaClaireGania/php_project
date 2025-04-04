@@ -68,7 +68,7 @@ class ContactForm
                     document.addEventListener('DOMContentLoaded', function() {
                         let messageBox = document.createElement('div');
                         messageBox.innerHTML = 'Your message has been sent successfully!';
-                        messageBox.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#7C0A02;color:#E1C16E;padding:10px;border-radius:10px;z-index:1000;';
+                        messageBox.style.cssText = 'position:fixed;top:30%;left:50%;transform: translate(-50%, -50%); background:#f4f1e8;color:#2e2e2e;padding:10px;border-radius:10px;z-index:1000;';
                         document.body.appendChild(messageBox);
                         
                         setTimeout(function() {
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="contact-card">
                 <h3>LET'S TALK BOOKS!</h3>
                 <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                    Whether you're looking for your next favorite novel or want to dive deep into a topic, we're here to help you find the perfect book. Feel free to reach out with any questions or book recommendations you may have.
                 </p>
                 <p class="phone">+01 3263 644 65</p>
                 <a href="#" class="contact-link">VIEW GLOBAL NUMBERS</a>

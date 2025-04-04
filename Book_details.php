@@ -54,14 +54,13 @@ if (isset($bookId) && is_numeric($bookId)) {
 
       <?php if ($book) { ?>
         <!-- Database Book Details -->
-        <div class="book-info">
-          <h2 id="book-title"><?= htmlspecialchars($book['Title']); ?></h2>
-          <p id="book-description"><?= htmlspecialchars($book['Description']); ?></p>
-        </div>
-      <?php } else { ?>
+        <h2 id="book-title"><?= htmlspecialchars($book['Title']); ?></h2>
+        <p id="book-description"><?= htmlspecialchars($book['Description']); ?></p>
     </div>
-  <?php } ?>
+  <?php } else { ?>
   </div>
+<?php } ?>
+</div>
 </body>
 
 </html>

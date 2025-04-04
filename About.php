@@ -1,8 +1,9 @@
 <?php
-session_start();  // Ensure session is started at the top
+session_start();
 
 if (isset($_SESSION['message'])) {
-  echo "<div class='message {$_SESSION['message_type']}'>";
+  // Assign the ID 'floating-message' to the message box
+  echo "<div id='floating-message' class='message {$_SESSION['message_type']}'>";
   echo $_SESSION['message'];
   echo "</div>";
 
@@ -223,17 +224,6 @@ if (isset($_SESSION['message'])) {
         and insightful articles. Subscribe now to fuel your passion for
         reading!
       </p>
-      <?php
-      if (isset($_SESSION['message'])) {
-        echo "<div id='floating-message' class='{$_SESSION['message_type']}'>";
-        echo $_SESSION['message'];
-        echo "</div>";
-
-        // Remove message after displaying
-        unset($_SESSION['message']);
-        unset($_SESSION['message_type']);
-      }
-      ?>
       <form action="newsletter_signup.php" method="POST">
         <input type="text" name="name" placeholder="Enter your Name" required />
         <input type="email" name="email" placeholder="Enter your Email" required />

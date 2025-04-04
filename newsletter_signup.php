@@ -35,7 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 
+    // Check if the form was submitted from 'Home.php' or 'About.php'
+    $referer = $_SERVER['HTTP_REFERER'];
 
-    header("Location: About.php");
+    if (strpos($referer, 'Home') !== false) {
+        header("Location: Home.php"); // Redirect to home page
+    } elseif (strpos($referer, 'About') !== false) {
+        header("Location: About.php"); // Redirect to about page
+    } else {
+        header("Location: Home.php"); // Default fallback
+    }
     exit();
 }

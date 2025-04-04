@@ -319,6 +319,7 @@
 .newsletter button:hover {
     background-color: #7C0A02;
     color: #DAA428;
+    border: 2px solid #DAA428;
 }
 
 .newsletter h2 {
@@ -343,29 +344,32 @@
 /* =============== FLOATING MESSAGE FOR NEWSLETTER =============== */
 #floating-message {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
     padding: 15px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.125rem;
+    font-weight: 500;
     border-radius: 5px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
     z-index: 1000;
     opacity: 1;
     transition: opacity 1s ease-in-out;
 }
 
+
 /* Message Types */
 .success {
-    background-color: #28a745;
-    color: white;
+    background-color: #f4f1e8;
+    color: #2e2e2e;
 }
 
 .error {
-    background-color: #dc3545;
-    color: white;
+    background-color: #7C0A02;
+    color: #f4f1e8;
 }
 
 .warning {
-    background-color: #ffc107;
-    color: black;
+    background-color: #E1C16E;
+    color: #5A3E36;
 }
