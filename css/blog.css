@@ -1,47 +1,64 @@
 body {
     text-align: center;
-}
-
-.introduction {
-    padding: 60px 10%;
-}
-
-.introduction p {
+  }
+  
+  .introduction {
+    padding: 60px 10% 30px;
+  }
+  
+  .introduction p {
     font-size: 1.2rem;
     color: #2e2e2e;
     margin-bottom: 40px;
   }
   
   .tips, .genres, .research_education, .spotlight_reviews, .new_events {
-    padding: 40px 20px;
+    padding: 20px 20px;
     margin-top: 30px;
   }
   
   h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    font-family: 'Engravers MT', serif;
+    font-style: normal;
+    text-align: center;
     color: #5A3E36;
   }
-
+  
   h3 {
     color: #e1c16e;
+    font-family: 'Engravers MT', serif;
+    font-style: normal;
   }
   
   .grid, .genres-grid, .spotlight-grid, .events-grid {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 100%;
+    height: auto; 
   }
   
   .card, .genre-card, .spotlight-card, .event-card {
     background-color: #7C0A02;
-    padding: 20px;
+    padding: 5px 15px 5px 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     color: #f4f1e8;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    min-height: 250px; 
+    height: auto; 
   }
-
+  
+  .card ul li {
+    list-style: upper-roman;
+    text-align: center;
+  }
+  
   .card img, .spotlight-card img {
     max-width: 100%;
     border-radius: 10px;
@@ -53,7 +70,7 @@ body {
   
   .explore-btn {
     padding: 12px 20px;
-    background-color: #DAA428; 
+    background-color: #DAA428;
     color: #7C0A02;
     border: none;
     border-radius: 5px;
