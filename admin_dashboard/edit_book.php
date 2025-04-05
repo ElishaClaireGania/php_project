@@ -55,18 +55,22 @@ if (isset($_POST['update'])) {
 </head>
 
 <body>
-    <h2>Edit Book</h2>
-    <form method="POST">
-        <label>Title:</label> <input type="text" name="title" value="<?php echo $book['Title']; ?>" required><br>
-        <label>Author:</label> <input type="text" name="author" value="<?php echo $book['Author']; ?>" required><br>
-        <label>Description:</label> <textarea name="description" required><?php echo $book['Description']; ?></textarea><br>
-        <label>Genre:</label> <input type="text" name="genre" value="<?php echo $book['Genre']; ?>" required><br>
-        <label>Price:</label> <input type="number" step="0.01" name="price" value="<?php echo $book['Price']; ?>" required><br>
-        <label>Quantity:</label> <input type="number" name="quantity" value="<?php echo $book['Quantity']; ?>" required><br>
-        <label>Image URL:</label> <input type="text" name="image_url" value="<?php echo $book['ImageURL']; ?>" required><br>
-        <label>PDF URL:</label> <input type="text" name="pdf_url" value="<?php echo $book['PDFURL']; ?>" required><br>
-        <button type="submit" name="update">Update Book</button>
-    </form>
+    <div>
+        <h2>Edit Book</h2>
+        <form method="POST">
+            <label>Title:</label> <input type="text" name="title" value="<?php echo $book['Title']; ?>" required><br>
+            <label>Author:</label> <input type="text" name="author" value="<?php echo $book['Author']; ?>" required><br>
+            <label>Description:</label> <textarea name="description" required><?php echo $book['Description']; ?></textarea><br>
+            <label>Genre:</label> <input type="text" name="genre" value="<?php echo $book['Genre']; ?>" required><br>
+            <label>Price:</label> <input type="number" step="0.01" name="price" value="<?php echo $book['Price']; ?>" required><br>
+            <label>Quantity:</label> <input type="number" name="quantity" value="<?php echo $book['Quantity']; ?>" required><br>
+            <label>Image URL:</label> <input type="text" name="image_url" value="<?php echo $book['ImageURL']; ?>" required><br>
+            <label>PDF URL:</label> <input type="text" name="pdf_url" value="<?php echo $book['PDFURL']; ?>" required><br>
+            <button type="submit" name="update">Update Book</button>
+        </form>
+    </div>
+
+    <div><a href="manage_admins.php" class="back-btn">Back</a></div>
 </body>
 
 </html>

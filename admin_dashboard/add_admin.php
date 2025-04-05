@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "INSERT INTO admin (Name, Email, Password) VALUES ('$name', '$email', '$password')";
     if (mysqli_query($conn, $query)) {
-        echo "<script>alert('Admin added successfully!'); window.location='view_records.php';</script>";
+        echo "<script>alert('Admin added successfully!'); window.location='manage_admins.php';</script>";
     } else {
         echo "<script>alert('Error adding admin.');</script>";
     }
@@ -37,13 +37,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2>Add a New Admin</h2>
-    <form method="POST">
-        Name: <input type="text" name="name" required><br>
-        Email: <input type="email" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
-        <button type="submit">Add Admin</button>
-    </form>
+    <div>
+        <h2>Add a New Admin</h2>
+        <form method="POST">
+            Name: <input type="text" name="name" required><br>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            <button type="submit">Add Admin</button>
+        </form>
+    </div>
+
+    <div><a href="Admin_dashboard.php" class="back-btn">Back</a></div>
 </body>
 
 </html>

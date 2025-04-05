@@ -67,35 +67,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2>Add a New Book</h2>
-    <form action="" method="POST" enctype="multipart/form-data">
-        <label for="title">Book Title:</label><br>
-        <input type="text" name="title" id="title" required><br>
+    <div>
+        <h2>Add a New Book</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label for="title">Book Title:</label><br>
+            <input type="text" name="title" id="title" required><br>
 
-        <label for="author">Author:</label><br>
-        <input type="text" name="author" id="author" required><br>
+            <label for="author">Author:</label><br>
+            <input type="text" name="author" id="author" required><br>
 
-        <label for="description">Description:</label><br>
-        <textarea name="description" id="description" rows="5" required></textarea><br>
+            <label for="description">Description:</label><br>
+            <textarea name="description" id="description" rows="5" required></textarea><br>
 
-        <label for="genre">Genre:</label><br>
-        <input type="text" name="genre" id="genre" required><br>
+            <label for="genre">Genre:</label><br>
+            <input type="text" name="genre" id="genre" required><br>
 
-        <label for="price">Price:</label><br>
-        <input type="number" name="price" id="price" step="0.01" required><br>
+            <label for="price">Price:</label><br>
+            <input type="number" name="price" id="price" step="0.01" required><br>
 
-        <label for="quantity">Quantity:</label><br>
-        <input type="number" name="quantity" id="quantity" required><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" name="quantity" id="quantity" required><br>
 
-        <label for="book_image">Book Cover Image:</label><br>
-        <input type="file" name="book_image" id="book_image" accept="image/*" required><br>
+            <label for="book_image">Book Cover Image:</label><br>
+            <input type="file" name="book_image" id="book_image" accept="image/*" required><br>
 
-        <label for="book_pdf">Book PDF:</label><br>
-        <input type="file" name="book_pdf" id="book_pdf" accept="application/pdf" required><br>
+            <label for="book_pdf">Book PDF:</label><br>
+            <input type="file" name="book_pdf" id="book_pdf" accept="application/pdf" required><br>
 
-        <button type="submit">Add Book</button>
-    </form>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
 
+    <div><a href="Admin_dashboard.php" class="back-btn">Back</a></div>
 </body>
 
 </html>

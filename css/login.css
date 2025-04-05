@@ -123,6 +123,9 @@ input {
     border-radius: 10px;
     font-size: 16px;
     border: none;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .login-btn {
@@ -137,9 +140,14 @@ input {
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
+    color: #daa428;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
 }
 
 .login-btn:hover {
-    color: #DAA428;
+    background: #daa428;
+    color: #7C0A02;
+    border: 3px solid #7C0A02;
 }
 

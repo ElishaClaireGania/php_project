@@ -21,7 +21,7 @@ $result = mysqli_query($conn, "SELECT * FROM books");
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="../css/managebook.css">
+    <link rel="stylesheet" href="../css/manage.css">
     <title>Manage Books</title>
 </head>
 
@@ -61,6 +61,7 @@ $result = mysqli_query($conn, "SELECT * FROM books");
         </table>
     </div>
 
+    <div><a href="Admin_dashboard.php" class="back-btn">Back</a></div>
 </body>
 
 </html>

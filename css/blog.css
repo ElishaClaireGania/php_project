@@ -2,28 +2,28 @@ body {
     text-align: center;
   }
   
-  .introduction {
-    padding: 60px 10% 30px;
-  }
+.introduction {
+  padding: 60px 10% 30px;
+}
   
-  .introduction p {
-    font-size: 1.2rem;
-    color: #2e2e2e;
-    margin-bottom: 40px;
-  }
+.introduction p {
+font-size: 1.2rem;
+color: #2e2e2e;
+margin-bottom: 40px;
+}
   
-  .tips, .genres, .research_education, .spotlight_reviews, .new_events {
-    padding: 20px 20px;
-    margin-top: 30px;
-  }
+.tips, .genres, .research_education, .spotlight_reviews, .new_events {
+  padding: 20px 20px;
+  margin-top: 30px;
+}
   
-  h2 {
-    font-size: 2rem;
-    font-family: 'Engravers MT', serif;
-    font-style: normal;
-    text-align: center;
-    color: #5A3E36;
-  }
+h2 {
+  font-size: 2rem;
+  font-family: 'Engravers MT', serif;
+  font-style: normal;
+  text-align: center;
+  color: #5A3E36;
+}  
   
   h3 {
     color: #e1c16e;
@@ -39,7 +39,7 @@ body {
     height: auto; 
   }
   
-  .card, .genre-card, .spotlight-card, .event-card {
+  .card, .spotlight-card, .event-card {
     background-color: #7C0A02;
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
@@ -54,41 +54,70 @@ body {
     height: auto; 
   }
   
-  .card ul li {
-    list-style: upper-roman;
-    text-align: center;
+  .genre-card {
+    background: #2e2e2e;
+    color: #f4f1e8;
+    border-radius: 7px;
+    max-width: 500px;
+    width: 100%;
+    height: 170px;
+    padding: 10px;
   }
   
-  .card img, .spotlight-card img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
+.card ul li {
+  list-style: upper-roman;
+  text-align: center;
+}
   
-  .card:hover, .genre-card:hover, .spotlight-card:hover, .event-card:hover {
-    transform: translateY(-10px);
-  }
+.card img, .spotlight-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
   
-  .explore-btn {
-    padding: 12px 20px;
-    background-color: #DAA428;
-    color: #7C0A02;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 30px;
-  }
+.spotlight-card:hover, .event-card:hover {
+  transform: translateY(-10px);
+}
+
+.research_education {
+  background-color: rgba(218, 164, 40, 0.2);
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.educ {
+  margin-bottom: 50px;
+}
+
+
+section.genres {
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
   
-  .explore-btn:hover {
-    background-color: #7C0A02;
-    color: #DAA428;
-    border: 2px solid #DAA428;
-    text-decoration: none;
-  }
+.explore-btn {
+  padding: 12px 20px;
+  background-color: #DAA428;
+  color: #7C0A02;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 50px;
+}
+  
+.explore-btn:hover {
+  background-color: #7C0A02;
+  color: #DAA428;
+  border: 2px solid #DAA428;
+  text-decoration: none;
+}
   

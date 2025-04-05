@@ -37,7 +37,7 @@
                 <input type="password" id="password" placeholder="Password" name="password" required minlength="8" maxlength="16" oninput="validatePassword()">
                 <span id="password-strength"></span>
                 <br>
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" class="login-btn">Log-in</button>
             </form>
             <p><a href="#">Forgot Password?</a></p>
         </div>

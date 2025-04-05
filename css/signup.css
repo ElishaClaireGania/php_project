@@ -104,6 +104,18 @@ form {
     width: 80%;
 }
 
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
 input,
 select {
     width: 100%;
@@ -112,6 +124,7 @@ select {
     border: 0;
     border-radius: 5px;
     font-size: 16px;
+    background-color: #f4f1e8;
 
 }
 
@@ -155,8 +168,13 @@ select {
     cursor: pointer;
     margin-top: 50px;
     font-size: 16px;
+    color: #E1C16E;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
 }
 
 .signup-btn:hover {
-    background-color: #7C0A02;
+    background: #DAA520;
+    color: #7C0A02;
+    border: 3px solid #7C0A02;
 }
